@@ -1,0 +1,1986 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday, Nadhiratul 🎀</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&family=La+Belle+Aurore&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <style>
+      :root {
+        --bg-color: #f8f6f4;
+        --text-dark: #322b28;
+        --text-muted: #8b837f;
+        --accent-blush: #eebbbf;
+        --accent-rose: #d68989;
+        --accent-wine: #743340;
+        --glass-bg: rgba(255, 255, 255, 0.45);
+        --glass-border: rgba(255, 255, 255, 0.5);
+        --shadow-soft: 0 20px 50px rgba(116, 51, 64, 0.08);
+        --curve: cubic-bezier(0.16, 1, 0.3, 1);
+        --font-serif: "Cormorant Garamond", serif;
+        --font-sans: "Outfit", sans-serif;
+        --font-hand: "La Belle Aurore", cursive;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+        font-size: 16px;
+      }
+      body {
+        font-family: var(--font-sans);
+        background-color: var(--bg-color);
+        color: var(--text-dark);
+        overflow-x: hidden;
+        min-height: 100vh;
+        cursor: none;
+      }
+
+      /* CUSTOM CURSOR */
+      #cursor-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--accent-wine);
+        border-radius: 50%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 99999;
+        transform: translate(-50%, -50%);
+      }
+      #cursor-ring {
+        width: 34px;
+        height: 34px;
+        border: 1.5px solid var(--accent-rose);
+        border-radius: 50%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        z-index: 99998;
+        transform: translate(-50%, -50%);
+        transition:
+          left 0.12s var(--curve),
+          top 0.12s var(--curve);
+        opacity: 0.7;
+      }
+
+      /* AMBIENT GLOWS */
+      body::before,
+      body::after,
+      .glow-orb-3 {
+        content: "";
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(140px);
+        z-index: -1;
+        opacity: 0.65;
+        pointer-events: none;
+        animation: orbDrift 25s infinite alternate ease-in-out;
+      }
+      body::before {
+        width: 50vw;
+        height: 50vh;
+        top: -10vh;
+        left: -10vw;
+        background: rgba(238, 187, 191, 0.5);
+      }
+      body::after {
+        width: 40vw;
+        height: 40vh;
+        bottom: -5vh;
+        right: -5vw;
+        background: rgba(214, 137, 137, 0.45);
+        animation-delay: -5s;
+      }
+      .glow-orb-3 {
+        width: 30vw;
+        height: 30vh;
+        top: 40%;
+        left: 30%;
+        background: rgba(255, 230, 233, 0.6);
+        animation-duration: 30s;
+      }
+      @keyframes orbDrift {
+        0% {
+          transform: translate(0, 0) scale(1) rotate(0deg);
+        }
+        50% {
+          transform: translate(10vw, 8vh) scale(1.15) rotate(15deg);
+        }
+        100% {
+          transform: translate(-5vw, 15vh) scale(0.9) rotate(-10deg);
+        }
+      }
+
+      /* GLOBAL PETALS */
+      .petal-bg {
+        position: fixed;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 1500;
+        transition: opacity 0.8s ease;
+      }
+      .petal-bg.hidden-petals {
+        opacity: 0;
+      }
+      .petal-item {
+        position: absolute;
+        top: -40px;
+        opacity: 0;
+        animation: petalFall linear infinite;
+      }
+      @keyframes petalFall {
+        0% {
+          opacity: 0;
+          transform: translateY(-40px) rotate(0deg);
+        }
+        10% {
+          opacity: 0.8;
+        }
+        90% {
+          opacity: 0.5;
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(105vh) rotate(540deg);
+        }
+      }
+
+      /* GRAIN */
+      .grain-overlay {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 9990;
+        opacity: 0.35;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+      }
+
+      /* SCROLLBAR */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(214, 137, 137, 0.5);
+        border-radius: 20px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--accent-wine);
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+        object-fit: cover;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-serif);
+        color: var(--text-dark);
+      }
+      em {
+        font-family: var(--font-hand);
+        color: var(--accent-wine);
+        font-size: 1.45em;
+        line-height: 0.8;
+        font-style: normal;
+      }
+
+      /* SCROLL REVEAL */
+      .reveal {
+        opacity: 0;
+        transform: translateY(32px);
+        transition:
+          opacity 0.9s var(--curve),
+          transform 0.9s var(--curve);
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* NAVBAR */
+      #navbar {
+        position: fixed;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 2000;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.75rem 2.8rem;
+        background: rgba(255, 255, 255, 0.65);
+        backdrop-filter: blur(24px) saturate(180%);
+        -webkit-backdrop-filter: blur(24px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        border-radius: 100px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        width: max-content;
+        max-width: 95vw;
+        transition:
+          box-shadow 0.4s,
+          background 0.4s;
+      }
+      #navbar.scrolled {
+        background: rgba(255, 255, 255, 0.82);
+        box-shadow: 0 12px 40px rgba(116, 51, 64, 0.1);
+      }
+      .nav-logo {
+        font-family: var(--font-serif);
+        font-size: 1.6rem;
+        font-weight: 700;
+        font-style: italic;
+        color: var(--accent-wine);
+        text-decoration: none;
+        margin-right: 3rem;
+      }
+      .nav-links {
+        display: flex;
+        gap: 2.2rem;
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: all 0.4s var(--curve);
+        position: relative;
+      }
+      .nav-links a:hover {
+        color: var(--accent-wine);
+      }
+
+      /* SECTION DESCRIPTIONS */
+      .section-desc {
+        text-align: center;
+        max-width: 550px;
+        margin: 0 auto 3.5rem auto;
+        color: var(--text-muted);
+        font-size: 1.05rem;
+        line-height: 1.7;
+      }
+
+      /* UNLOCK SCREEN */
+      #unlock-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(248, 246, 244, 0.95);
+        backdrop-filter: blur(35px) saturate(150%);
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition:
+          opacity 1.2s cubic-bezier(0.2, 0.8, 0.2, 1),
+          visibility 1.2s;
+      }
+      #unlock-overlay.hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+      .unlock-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.8rem;
+        animation: fadeInDown 1.8s var(--curve);
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        padding: 4rem;
+        border-radius: 30px;
+        box-shadow: 0 30px 60px rgba(116, 51, 64, 0.08);
+        position: relative;
+        z-index: 1;
+      }
+      .unlock-emoji {
+        font-size: 3rem;
+        animation: floatEmoji 3s ease-in-out infinite;
+      }
+      @keyframes floatEmoji {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+      .unlock-title {
+        font-family: var(--font-hand);
+        font-size: clamp(3rem, 6vw, 4.5rem);
+        color: var(--accent-wine);
+        text-align: center;
+      }
+      .passcode-dots {
+        display: flex;
+        gap: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+      .passcode-dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(214, 137, 137, 0.5);
+        background: rgba(255, 255, 255, 0.4);
+        transition: all 0.3s var(--curve);
+      }
+      .passcode-dot.filled {
+        background: var(--accent-wine);
+        border-color: var(--accent-wine);
+        transform: scale(1.3);
+      }
+      .passcode-dot.error {
+        background: #e05555;
+        border-color: #e05555;
+        animation: dotShake 0.45s ease;
+      }
+      @keyframes dotShake {
+        0%,
+        100% {
+          transform: translateX(0) scale(1.3);
+        }
+        25% {
+          transform: translateX(-6px) scale(1.3);
+        }
+        75% {
+          transform: translateX(6px) scale(1.3);
+        }
+      }
+      .unlock-numpad {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.9rem;
+      }
+      .num-btn {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        border: 1px solid rgba(214, 137, 137, 0.2);
+        background: rgba(255, 255, 255, 0.6);
+        font-family: var(--font-sans);
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: var(--text-dark);
+        cursor: pointer;
+        transition: all 0.3s var(--curve);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .num-btn:hover {
+        background: var(--accent-wine);
+        color: #fff;
+        transform: translateY(-3px);
+      }
+      .num-btn.del-btn,
+      .num-btn#btn-ok {
+        background: transparent;
+        border-color: transparent;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--accent-wine);
+      }
+      .num-btn.del-btn:hover,
+      .num-btn#btn-ok:hover {
+        color: #fff;
+        background: var(--accent-wine);
+      }
+
+      /* HERO */
+      #hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 120px 8vw 100px;
+      }
+      .hero-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1250px;
+        width: 100%;
+        gap: 6rem;
+      }
+      .hero-text {
+        flex: 1.2;
+        position: relative;
+        z-index: 2;
+      }
+      .hero-date-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: rgba(116, 51, 64, 0.07);
+        border: 1px solid rgba(116, 51, 64, 0.14);
+        border-radius: 50px;
+        padding: 0.4rem 1rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--accent-wine);
+        letter-spacing: 0.08em;
+        margin-bottom: 1.4rem;
+      }
+      .hero-date-badge .bdot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent-wine);
+        animation: blink 1.5s ease-in-out infinite;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.2;
+        }
+      }
+      .hero-tag {
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--accent-rose);
+        font-weight: 700;
+        display: block;
+        margin-bottom: 1.5rem;
+      }
+      .hero-heading {
+        font-family: var(--font-serif);
+        font-size: clamp(3.5rem, 6vw, 5.2rem);
+        font-weight: 400;
+        line-height: 1.05;
+        margin-bottom: 2rem;
+        color: #1e1a18;
+      }
+      .hero-sub {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        line-height: 1.8;
+        max-width: 440px;
+        margin-bottom: 3.5rem;
+      }
+      .polaroid-container {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+      }
+      .polaroid {
+        background: #fff;
+        padding: 1.2rem 1.2rem 4.5rem;
+        box-shadow: 0 35px 70px rgba(116, 51, 64, 0.1);
+        transform: rotate(4deg);
+        transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+        max-width: 360px;
+      }
+      .polaroid:hover {
+        transform: rotate(-1deg) translateY(-15px) scale(1.03);
+      }
+      .polaroid img {
+        border-radius: 2px;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4/5;
+      }
+      .polaroid-caption {
+        font-family: var(--font-hand);
+        font-size: 1.7rem;
+        color: var(--accent-wine);
+        text-align: center;
+        position: absolute;
+        bottom: 18px;
+        left: 0;
+        width: 100%;
+      }
+
+      .btn-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 1rem 2.5rem;
+        background: var(--text-dark);
+        color: #fff;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.4s var(--curve);
+        border: none;
+        cursor: pointer;
+      }
+      .btn-pill:hover {
+        background: var(--accent-wine);
+        transform: translateY(-4px);
+        box-shadow: 0 15px 30px rgba(116, 51, 64, 0.2);
+      }
+      .btn-pill.outlined {
+        background: transparent;
+        color: var(--text-dark);
+        border: 1.5px solid rgba(50, 43, 40, 0.3);
+      }
+
+      /* MENU PANELS */
+      .menu-section-container {
+        padding: 90px 4vw 60px;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      .section-eyebrow {
+        display: block;
+        font-size: 0.75rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--accent-rose);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 0.6rem;
+      }
+      .section-heading-main {
+        font-family: var(--font-serif);
+        font-size: clamp(2.2rem, 4vw, 3.4rem);
+        font-weight: 300;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+      .panels-wrapper {
+        display: flex;
+        width: 100%;
+        min-height: 520px;
+        height: 60vh;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+      }
+      .vertical-panel {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: flex 0.6s var(--curve);
+        position: relative;
+        text-decoration: none;
+        cursor: pointer;
+        border-right: 1px solid rgba(255, 255, 255, 0.15);
+        overflow: hidden;
+      }
+      .vertical-panel:last-child {
+        border-right: none;
+      }
+      .vertical-panel:hover {
+        flex: 1.25;
+      }
+      .panel-content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 3rem 1.5rem;
+        text-align: center;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+      }
+
+      .panel-icon-wrap {
+        width: 125px;
+        height: 125px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow:
+          0 15px 35px rgba(0, 0, 0, 0.1),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: transform 0.6s var(--curve);
+        position: relative;
+      }
+      .panel-icon-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s var(--curve);
+      }
+      .panel-icon-wrap img.errored {
+        display: none;
+      }
+      .panel-icon-wrap .icon-fallback {
+        display: none;
+        font-size: 2.8rem;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.25);
+        border-radius: 50%;
+      }
+      .panel-icon-wrap img.errored + .icon-fallback {
+        display: flex;
+      }
+      .vertical-panel:hover .panel-icon-wrap img {
+        transform: scale(1.1);
+      }
+      .panel-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.2rem;
+      }
+      .panel-title {
+        font-family: var(--font-sans);
+        font-weight: 800;
+        font-size: 1.1rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--text-dark);
+      }
+      .panel-btn {
+        background: rgba(255, 255, 255, 0.5);
+        color: var(--text-dark);
+        border: none;
+        padding: 0.8rem 1.8rem;
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        font-weight: 700;
+        backdrop-filter: blur(10px);
+        border-radius: 30px;
+        transition: all 0.35s var(--curve);
+      }
+      .vertical-panel:hover .panel-btn {
+        background: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+      }
+
+      .color-panel-1 {
+        background: #e6dad4;
+      }
+      .color-panel-2 {
+        background: #fdb7c6;
+      }
+      .color-panel-3 {
+        background: #dd636c;
+      }
+      .color-panel-3 .panel-title {
+        color: #fff;
+      }
+      .color-panel-4 {
+        background: #8f2743;
+      }
+      .color-panel-4 .panel-title {
+        color: #fff;
+      }
+
+      .panel-locked-badge {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 1.3rem;
+        color: #fff;
+        opacity: 0.8;
+      }
+      .unlocked .panel-locked-badge {
+        opacity: 0;
+      }
+
+      /* COUPONS */
+      .coupons-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+      .coupon-ticket {
+        background: #fff;
+        border-radius: 20px;
+        display: flex;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+        position: relative;
+        border: 1px solid var(--glass-border);
+        transition: transform 0.4s var(--curve);
+      }
+      .coupon-ticket:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 25px 50px rgba(116, 51, 64, 0.08);
+      }
+
+      /* Make the 5th Super Ticket massive */
+      .coupon-ticket:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+      }
+      .coupon-ticket.super-ticket {
+        border: 2px solid var(--accent-rose);
+        background: linear-gradient(135deg, #fff, #fff0f3);
+        box-shadow: 0 20px 50px rgba(214, 137, 137, 0.15);
+        min-height: 180px;
+      }
+      .coupon-ticket.super-ticket .coupon-name {
+        color: var(--accent-wine);
+        font-size: 2.5rem;
+      }
+      .coupon-ticket.super-ticket .coupon-icon {
+        background: rgba(116, 51, 64, 0.08);
+        color: var(--accent-wine);
+        width: 65px;
+        height: 65px;
+        font-size: 1.8rem;
+      }
+      .coupon-ticket.super-ticket .coupon-desc {
+        font-size: 1.05rem;
+        max-width: 80%;
+      }
+
+      .coupon-left {
+        flex: 1;
+        padding: 3rem 2.5rem;
+        position: relative;
+      }
+      .coupon-left::after {
+        content: "";
+        position: absolute;
+        right: -12px;
+        top: 5%;
+        bottom: 5%;
+        border-right: 3px dotted rgba(214, 137, 137, 0.4);
+      }
+      .coupon-right {
+        width: 80px;
+        background: rgba(247, 245, 242, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .coupon-number {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        font-size: 0.8rem;
+        letter-spacing: 0.25em;
+        font-weight: 600;
+        color: var(--text-muted);
+      }
+      .coupon-icon {
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        background: var(--bg-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+      }
+      .coupon-name {
+        font-family: var(--font-serif);
+        font-size: 2rem;
+        margin-bottom: 0.4rem;
+        line-height: 1.1;
+        font-weight: 600;
+      }
+      .coupon-desc {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+      }
+      .scratch-area {
+        margin-top: 2rem;
+        position: relative;
+        width: 100%;
+        height: 55px;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .scratch-canvas {
+        position: absolute;
+        inset: 0;
+        cursor: crosshair;
+        touch-action: none;
+      }
+      .scratch-reveal {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(238, 187, 191, 0.15);
+        color: var(--accent-wine);
+        font-weight: 700;
+      }
+
+      /* GALLERY */
+      .gallery-track {
+        display: flex;
+        gap: 2rem;
+        overflow-x: auto;
+        padding: 2.5rem 5vw 3rem;
+        scroll-snap-type: x mandatory;
+        align-items: center;
+      }
+      /* Visible styled scrollbar for Gallery */
+      .gallery-track::-webkit-scrollbar {
+        display: block;
+        height: 10px;
+      }
+      .gallery-track::-webkit-scrollbar-track {
+        background: rgba(214, 137, 137, 0.15);
+        border-radius: 10px;
+        margin: 0 5vw;
+      }
+      .gallery-track::-webkit-scrollbar-thumb {
+        background: var(--accent-rose);
+        border-radius: 10px;
+        border: 2px solid var(--bg-color);
+      }
+
+      .gallery-card {
+        min-width: 320px;
+        max-width: 320px;
+        background: #fff;
+        padding: 1rem 1rem 3.5rem;
+        border-radius: 3px;
+        box-shadow: 0 15px 35px rgba(116, 51, 64, 0.09);
+        scroll-snap-align: center;
+        position: relative;
+        transition: all 0.5s var(--curve);
+      }
+      .gallery-card img {
+        width: 100%;
+        aspect-ratio: 4/5;
+        object-fit: cover;
+        border-radius: 2px;
+      }
+      .gallery-card:nth-child(even) {
+        transform: rotate(3.5deg) translateY(8px);
+      }
+      .gallery-card:nth-child(odd) {
+        transform: rotate(-3deg);
+      }
+      .gallery-card:hover {
+        transform: rotate(0deg) scale(1.03) translateY(-10px) !important;
+        z-index: 10;
+      }
+      .gallery-caption {
+        font-family: var(--font-hand);
+        font-size: 1.7rem;
+        color: var(--accent-wine);
+        text-align: center;
+        position: absolute;
+        bottom: 12px;
+        left: 0;
+        width: 100%;
+      }
+
+      /* QUIZ */
+      #quiz {
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(20px);
+        border: 1px solid #fff;
+        border-radius: 40px;
+        padding: 4rem 3rem;
+        box-shadow: var(--shadow-soft);
+        text-align: center;
+        max-width: 780px;
+        margin: 0 auto;
+        position: relative;
+      }
+      .quiz-progress-bar {
+        height: 4px;
+        background: rgba(214, 137, 137, 0.2);
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 0.8rem;
+      }
+      .quiz-progress-fill {
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          var(--accent-blush),
+          var(--accent-rose)
+        );
+        transition: width 0.6s var(--curve);
+      }
+      .quiz-q {
+        font-family: var(--font-serif);
+        font-size: clamp(1.5rem, 4vw, 2.2rem);
+        margin-bottom: 2.5rem;
+        line-height: 1.3;
+      }
+      .quiz-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2rem;
+      }
+      .quiz-opt {
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all 0.4s var(--curve);
+        border: 2px solid transparent;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+      }
+
+      .quiz-opt.text-only {
+        background: rgba(255, 255, 255, 0.8);
+        padding: 1.2rem;
+        font-size: 1.05rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 90px;
+        line-height: 1.4;
+        text-align: center;
+      }
+      .quiz-opt.text-only:hover {
+        transform: scale(0.97) translateY(-3px);
+        background: #fff;
+      }
+
+      .quiz-opt.correct {
+        border: 2px solid #a3c9a8;
+        background: #e8f5e9;
+        color: #2e4732;
+      }
+      .quiz-opt.wrong {
+        filter: grayscale(100%);
+        opacity: 0.5;
+        background: #f4f4f4;
+      }
+      #quiz-next {
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.5s;
+        padding: 1.1rem 3rem;
+      }
+      #quiz-next.show {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .heart-pop {
+        position: fixed;
+        pointer-events: none;
+        z-index: 99997;
+        font-size: 1.8rem;
+        animation: heartRise 1.5s ease-out forwards;
+      }
+      @keyframes heartRise {
+        0% {
+          opacity: 1;
+          transform: translateY(0) scale(0.5);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-150px) scale(1.2);
+        }
+      }
+
+      /* FOOTER */
+      #footer {
+        text-align: center;
+        padding: 4rem 2rem 6rem;
+        font-family: var(--font-sans);
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        line-height: 1.8;
+        position: relative;
+        z-index: 2;
+      }
+      #footer i {
+        color: var(--accent-wine);
+        margin: 0 5px;
+        animation: pulse 2s infinite;
+      }
+
+      /* MODALS */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(30, 26, 24, 0.5);
+        backdrop-filter: blur(10px);
+        z-index: 3000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s ease;
+      }
+      .modal-overlay.open {
+        opacity: 1;
+        visibility: visible;
+      }
+      .modal-box {
+        background: var(--bg-color);
+        border-radius: 24px;
+        position: relative;
+        width: 100%;
+        max-width: 600px;
+        transform: scale(0.95) translateY(20px);
+        transition: all 0.6s var(--curve);
+        max-height: 85vh;
+        overflow-y: auto;
+      }
+      .modal-overlay.open .modal-box {
+        transform: scale(1) translateY(0);
+      }
+      .modal-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.9);
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+        z-index: 10;
+      }
+
+      .letter-content {
+        padding: 4.5rem 4rem;
+        background: #fffefb;
+      }
+      .letter-body {
+        font-family: var(--font-serif);
+        font-size: 1.2rem;
+        line-height: 2;
+        color: #413d3a;
+      }
+      .letter-body p {
+        margin-bottom: 1.8rem;
+      }
+      .signature {
+        font-family: var(--font-hand);
+        font-size: 2.5rem;
+        color: var(--accent-wine);
+        text-align: right;
+        margin-top: 4rem;
+      }
+      .gift-text-wrap {
+        padding: 4rem 3rem;
+        text-align: center;
+      }
+      .gift-text-wrap img {
+        border-radius: 20px;
+        margin-bottom: 2rem;
+        width: 100%;
+        max-height: 350px;
+        object-fit: cover;
+      }
+
+      /* FLOATING ACTION BUTTONS */
+      .floating-btn {
+        position: fixed;
+        bottom: 35px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        cursor: pointer;
+        z-index: 2500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(0, 0, 0, 0.02);
+        font-size: 1.3rem;
+        transition: all 0.4s var(--curve);
+      }
+      .floating-btn:hover {
+        transform: scale(1.1);
+      }
+
+      #music-btn {
+        right: 35px;
+        color: var(--text-muted);
+      }
+      #music-btn.playing {
+        color: var(--accent-wine);
+        animation: musicPulse 2s ease-in-out infinite;
+      }
+      @keyframes musicPulse {
+        0%,
+        100% {
+          box-shadow: 0 15px 35px rgba(116, 51, 64, 0.15);
+        }
+        50% {
+          box-shadow: 0 15px 35px rgba(116, 51, 64, 0.35);
+        }
+      }
+
+      #petal-btn {
+        right: 105px;
+        color: var(--accent-wine);
+      }
+      #petal-btn.off {
+        color: var(--text-muted);
+        opacity: 0.7;
+      }
+
+      @media (max-width: 900px) {
+        .hero-wrapper {
+          flex-direction: column;
+          text-align: center;
+          gap: 4rem;
+        }
+        .panels-wrapper {
+          flex-direction: column;
+          height: auto;
+        }
+        .vertical-panel {
+          flex: none;
+          width: 100%;
+          min-height: 180px;
+          border-right: none;
+        }
+        .panel-content {
+          flex-direction: row;
+          justify-content: space-between;
+          padding: 2rem;
+        }
+        .panel-icon-wrap {
+          width: 90px;
+          height: 90px;
+        }
+        .coupons-grid {
+          grid-template-columns: 1fr;
+        }
+        .quiz-grid {
+          grid-template-columns: 1fr;
+        }
+        .gallery-card {
+          min-width: 260px;
+          max-width: 260px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grain-overlay"></div>
+    <div class="glow-orb-3"></div>
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <div class="petal-bg" id="petal-bg"></div>
+
+    <div id="unlock-overlay">
+      <div class="unlock-box">
+        <div class="unlock-emoji">💌</div>
+        <h1 class="unlock-title">For Nadhiratul</h1>
+        <p
+          style="
+            color: var(--text-muted);
+            letter-spacing: 0.15em;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 700;
+          "
+        >
+          Enter Date
+        </p>
+        <div class="passcode-dots" id="p-dots">
+          <div class="passcode-dot"></div>
+          <div class="passcode-dot"></div>
+          <div class="passcode-dot"></div>
+          <div class="passcode-dot"></div>
+          <div class="passcode-dot"></div>
+          <div class="passcode-dot"></div>
+        </div>
+        <div class="unlock-numpad">
+          <button class="num-btn">1</button><button class="num-btn">2</button
+          ><button class="num-btn">3</button> <button class="num-btn">4</button
+          ><button class="num-btn">5</button><button class="num-btn">6</button>
+          <button class="num-btn">7</button><button class="num-btn">8</button
+          ><button class="num-btn">9</button>
+          <button class="num-btn del-btn" id="btn-del">
+            <i class="fas fa-backspace"></i>
+          </button>
+          <button class="num-btn">0</button>
+          <button class="num-btn" id="btn-ok">OK</button>
+        </div>
+      </div>
+    </div>
+
+    <nav id="navbar">
+      <a href="#hero" class="nav-logo">fh.</a>
+      <ul class="nav-links">
+        <li><a href="#menus">Home</a></li>
+        <li><a href="#coupons">Coupons</a></li>
+        <li><a href="#bento-gift">Gift</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#quiz-sec">Quiz</a></li>
+      </ul>
+    </nav>
+
+    <section id="hero">
+      <div class="hero-wrapper">
+        <div class="hero-text">
+          <span class="hero-tag">Sincerely, from me</span>
+          <h1 class="hero-heading">
+            Nadhiratul Insyirah,<br />Happy <em>21st Birthday!</em>
+          </h1>
+          <p class="hero-sub">
+            <br />
+            I made this space just for you. Because standard gifts are nice, but
+            building an entire world just to tell you how much you mean to me
+            felt a little better(I kan built different)
+          </p>
+          <div class="hero-ctas">
+            <a href="#menus" class="btn-pill">Unwrap the surprises</a>
+          </div>
+        </div>
+        <div class="polaroid-container">
+          <div class="polaroid">
+            <img src="images/bocil.jpeg" alt="Us" />
+            <p class="polaroid-caption">My favorite person ♡</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menus" class="menu-section-container reveal">
+      <span class="section-eyebrow">— explore —</span>
+      <h2 class="section-heading-main">
+        Made with <em>love</em>, just for Nadiy Bocil
+      </h2>
+      <p class="section-desc">
+        All of the things I've made here are for you, feel free to check them
+        one by one. No rushhh, take your time to explore
+      </p>
+      <div class="panels-wrapper">
+        <div
+          class="vertical-panel color-panel-1"
+          onclick="openModal('modal-letter')"
+          role="button"
+        >
+          <div class="panel-content">
+            <div class="panel-icon-wrap">
+              <img
+                src="images/letter.png"
+                alt="Letter"
+                onerror="this.classList.add('errored')"
+              />
+              <span class="icon-fallback">💌</span>
+            </div>
+            <div class="panel-footer">
+              <span class="panel-title">Letter</span>
+              <div class="panel-btn">Read It</div>
+            </div>
+          </div>
+        </div>
+        <a class="vertical-panel color-panel-2" href="#coupons">
+          <div class="panel-content">
+            <div class="panel-icon-wrap">
+              <img
+                src="images/coupon.png"
+                alt="Coupons"
+                onerror="this.classList.add('errored')"
+              />
+              <span class="icon-fallback">🎟️</span>
+            </div>
+            <div class="panel-footer">
+              <span class="panel-title">Coupons</span>
+              <div class="panel-btn">Claim Them</div>
+            </div>
+          </div>
+        </a>
+        <a
+          class="vertical-panel color-panel-3 panel-locked"
+          id="bento-gift"
+          onclick="checkGift()"
+        >
+          <i class="fas fa-lock panel-locked-badge"></i>
+          <div class="panel-content">
+            <div class="panel-icon-wrap">
+              <img
+                src="images/gift.png"
+                alt="Gift"
+                onerror="this.classList.add('errored')"
+              />
+              <span class="icon-fallback">🎁</span>
+            </div>
+            <div class="panel-footer">
+              <span class="panel-title">Gift</span>
+              <div class="panel-btn" id="gift-panel-btn">Open Later</div>
+            </div>
+          </div>
+        </a>
+        <a class="vertical-panel color-panel-4" href="#quiz-sec">
+          <div class="panel-content">
+            <div class="panel-icon-wrap">
+              <img
+                src="images/quiz.png"
+                alt="Memory"
+                onerror="this.classList.add('errored')"
+              />
+              <span class="icon-fallback">🧩</span>
+            </div>
+            <div class="panel-footer">
+              <span class="panel-title">Quiz</span>
+              <div class="panel-btn">Play Now</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section id="coupons" class="menu-section-container reveal">
+      <h2 class="section-heading-main">Love <em>Vouchers</em></h2>
+      <p class="section-desc">
+        Use these whenever you want, no questions asked. One time per use only,
+        Just don't use them all at once and also please use them dont forget
+        like last time ish ish ish (Scratch to reveal and screenshot send it to
+        me to claim).
+      </p>
+      <div
+        class="coupons-grid"
+        id="coupons-list"
+        style="margin-top: 2rem"
+      ></div>
+    </section>
+
+    <section id="gallery" class="menu-section-container reveal">
+      <h2 class="section-heading-main">A Year of <em>Us</em></h2>
+      <p class="section-desc">
+        A quick trip down memory lane. We had so many crazy moments and
+        adventures this year lol our relationship itself is a movie, and it
+        makes life so much more interesting ngl. I've chosen only 10 from this
+        year for you to scroll through and see them all
+      </p>
+      <div class="gallery-track" id="gallery-track">
+        <div class="gallery-card">
+          <img src="images/gallery-1.jpg" alt="1" />
+          <p class="gallery-caption">new year together</p>
+        </div>
+        <div class="gallery-card">
+          <img src="images/gallery-2.jpg" alt="2" />
+          <p class="gallery-caption">
+            you and your family datang cyber(saya pemalu)
+          </p>
+        </div>
+        <div class="gallery-card">
+          <img src="images/gallery-3.jpg" alt="3" />
+          <p class="gallery-caption">bnoh bocil cejuk</p>
+        </div>
+        <div class="gallery-card">
+          <img src="images/gallery-4.jpg" alt="4" />
+          <p class="gallery-caption">the day i fell in love with mcr lol</p>
+        </div>
+        <div class="gallery-card">
+          <img src="images/gallery-5.jpg" alt="5" />
+          <p class="gallery-caption">bocil kacau orang study</p>
+        </div>
+        <div class="gallery-card">
+          <img src="images/gallery-6.jpg" alt="6" />
+          <p class="gallery-caption">
+            first time lawat you di uia hoho(celpad ftw)
+          </p>
+        </div>
+        <div class="gallery-card">
+          <img src="images/gallery-7.jpg" alt="7" />
+          <p class="gallery-caption">kacip tapi slay</p>
+        </div>
+        <div class="gallery-card">
+          <img src="images/gallery-8.jpg" alt="8" />
+          <p class="gallery-caption">such a fun day</p>
+        </div>
+        <div class="gallery-card">
+          <img src="images/gallery-9.jpg" alt="9" />
+          <p class="gallery-caption">the bocils</p>
+        </div>
+        <div class="gallery-card">
+          <img src="images/gallery-10.jpg" alt="10" />
+          <p class="gallery-caption">BOCOH MEN AIR</p>
+        </div>
+        <div class="gallery-card">
+          <img src="images/gallery-11.jpg" alt="11" />
+          <p class="gallery-caption">lets go to waterpark again one day</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz-sec" class="menu-section-container reveal">
+      <h2 class="section-heading-main">The Memory <em>Test</em></h2>
+      <p class="section-desc">
+        Hoho You need to get everything correct to unlock the gift. If you can
+        answer everything, then you are finally 21 (bocoh 13)
+      </p>
+      <div id="quiz">
+        <div class="quiz-container" id="quiz-panel">
+          <div class="quiz-progress-bar">
+            <div
+              class="quiz-progress-fill"
+              id="q-progress-fill"
+              style="width: 0%"
+            ></div>
+          </div>
+          <p class="quiz-progress" id="q-counter">Memory 1 of 10</p>
+          <h2 class="quiz-q" id="q-text">Loading...</h2>
+          <div class="quiz-grid" id="q-options"></div>
+          <div class="btn-container">
+            <button class="btn-pill" id="quiz-next" onclick="nextQuestion()">
+              Next Memory →
+            </button>
+          </div>
+        </div>
+        <div
+          class="end-screen"
+          id="quiz-fail"
+          style="display: none; text-align: center"
+        >
+          <div style="font-size: 4rem">💔</div>
+          <h3>Ish ishh bocil...</h3>
+          <p>
+            Score: <span id="final-score">0</span>/10. You need a 10/10 to
+            unlock the gift
+          </p>
+          <button class="btn-pill" onclick="restartQuiz()">Try Again</button>
+        </div>
+        <div
+          class="end-screen"
+          id="quiz-success"
+          style="display: none; text-align: center"
+        >
+          <div style="font-size: 4.5rem">🎊</div>
+          <h3>Eleh nasib je</h3>
+          <p>10/10! Okaylah gift is now unlocked. You can check it out above</p>
+          <button class="btn-pill" onclick="openModal('modal-unlocked')">
+            See Present
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer id="footer">
+      <p>
+        Crafted specifically for Nadhiratul Insyirah's special day.<br />Be
+        healthy always <i class="fas fa-heart"></i><br /><br />— fh. —
+      </p>
+    </footer>
+
+    <div
+      class="modal-overlay"
+      id="modal-letter"
+      onclick="closeModal(event, 'modal-letter')"
+    >
+      <div class="modal-box">
+        <button class="modal-close" onclick="closeBtn(event)">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="letter-content">
+          <div class="letter-body">
+            <p>
+              To my bocil fomo, popia, sutin, sik kabu also known as Nadhiratul
+              Insyirah,
+            </p>
+            <p>
+              I can hardly believe another year has passed. It has gone by so
+              fast, and we can’t deny that a lot happened this past year, both
+              good and bad. Above all, I’m glad I’m still here with you, talking
+              to you every day. Every moment spent by your side has been a
+              masterclass in learning what genuine relationship feels like.
+            </p>
+            <p>
+              You are such a sincere person, and I’ve always thought of you as
+              the water to my fire (even though lately mcm terbalik sebab i dah
+              alpha). I wanted to build this little place for you today to
+              remind you how deeply treasured you are to me.
+            </p>
+            <p>
+              I admire your quiet strength, your small laughs, and the tender
+              way you care for the people around you. You aren’t just my closest
+              person; you are my closest confidant and my favorite habit.
+            </p>
+            <p>
+              I pray that this year brings even more growth for you as a person
+              and that you stay as healthy as can be. May you reach every goal
+              you’ve set out to achieve. My world is unequivocally better
+              because you're in it.
+            </p>
+            <p>
+              Happy Birthday, Nadhiratul. I want to be a better person so I can
+              always be there for you.Today, tomorrow, and always.
+            </p>
+            <div class="signature">Forever your no.1 supporter,<br />fh.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal-overlay"
+      id="modal-locked"
+      onclick="closeModal(event, 'modal-locked')"
+    >
+      <div class="modal-box gift-text-wrap">
+        <button class="modal-close" onclick="closeBtn(event)">
+          <i class="fas fa-times"></i>
+        </button>
+        <div style="font-size: 4rem">🔐</div>
+        <h3>Locked.</h3>
+        <p>
+          Nuh uh takle lagi, you need to score a perfect 10/10 on the Quiz to
+          open your present hehe
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="modal-overlay"
+      id="modal-unlocked"
+      onclick="closeModal(event, 'modal-unlocked')"
+    >
+      <div class="modal-box gift-text-wrap">
+        <button class="modal-close" onclick="closeBtn(event)">
+          <i class="fas fa-times"></i>
+        </button>
+        <img src="images/upinipin.jpeg" alt="Gift" />
+        <h3>IM SORRYYYY!</h3>
+        <p>
+          Actually, im making something for you, but materials yang i order tak
+          sambat lagi, please wait a bit more for me pleaseee, HAPPY
+          BIRTHDAYYYYYY AGAIN, lets spend time together first tomorrow,WAIT FOR
+          MY PRESENT TAAU TAU TAU TAUT AT TAUS
+        </p>
+      </div>
+    </div>
+
+    <button class="floating-btn" id="petal-btn" title="Toggle petals">
+      <i class="fas fa-leaf" id="petal-icon"></i>
+    </button>
+    <button class="floating-btn" id="music-btn" title="Toggle music">
+      <i class="fas fa-music" id="music-icon"></i>
+    </button>
+
+    <audio id="bgm" loop><source src="smile.mp3" type="audio/mpeg" /></audio>
+
+    <script>
+      /* CURSOR */
+      const cDot = document.getElementById("cursor-dot"),
+        cRing = document.getElementById("cursor-ring");
+      document.addEventListener("mousemove", (e) => {
+        cDot.style.left = e.clientX + "px";
+        cDot.style.top = e.clientY + "px";
+        cRing.style.left = e.clientX + "px";
+        cRing.style.top = e.clientY + "px";
+      });
+
+      /* FALLING PETALS (Full Screen Spawning) */
+      const pb = document.getElementById("petal-bg");
+      ["🌸", "🌷", "🌺", "💮", "🌸"].forEach((emoji) => {
+        for (let j = 0; j < 4; j++) {
+          const p = document.createElement("span");
+          p.className = "petal-item";
+          p.textContent = emoji;
+
+          let isLeft = Math.random() > 0.5;
+          let leftPos = isLeft ? Math.random() * 15 : 85 + Math.random() * 15;
+
+          p.style.left = `${leftPos}%`;
+          p.style.fontSize = `${0.9 + Math.random() * 0.9}rem`;
+          p.style.animationDuration = `${6 + Math.random() * 10}s`;
+          p.style.animationDelay = `${Math.random() * 6}s`;
+          pb.appendChild(p);
+        }
+      });
+
+      /* PETAL TOGGLE */
+      const pBtn = document.getElementById("petal-btn");
+      let petalsOn = true;
+      pBtn.onclick = () => {
+        petalsOn = !petalsOn;
+        if (petalsOn) {
+          pb.classList.remove("hidden-petals");
+          pBtn.classList.remove("off");
+        } else {
+          pb.classList.add("hidden-petals");
+          pBtn.classList.add("off");
+        }
+      };
+
+      /* PASSCODE */
+      const SECRET = "050512";
+      let code = "";
+      const dots = document.querySelectorAll(".passcode-dot");
+      document
+        .querySelectorAll(".num-btn:not(#btn-ok):not(#btn-del)")
+        .forEach((b) => {
+          b.addEventListener("click", () => {
+            if (code.length < 6) {
+              code += b.textContent.trim();
+              updateDots();
+            }
+          });
+        });
+      document.getElementById("btn-del").addEventListener("click", () => {
+        if (code.length > 0) {
+          code = code.slice(0, -1);
+          updateDots();
+        }
+      });
+      document.getElementById("btn-ok").addEventListener("click", () => {
+        if (code === SECRET) {
+          document.getElementById("unlock-overlay").classList.add("hidden");
+          confetti({ particleCount: 150, spread: 70 });
+        } else {
+          dots.forEach((d) => d.classList.add("error"));
+          setTimeout(() => {
+            code = "";
+            updateDots();
+          }, 700);
+        }
+      });
+      function updateDots() {
+        dots.forEach((d, i) => {
+          d.classList.toggle("filled", i < code.length);
+          d.classList.remove("error");
+        });
+      }
+
+      /* REVEAL */
+      const ro = new IntersectionObserver(
+        (entries) =>
+          entries.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("visible");
+          }),
+        { threshold: 0.1 },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => ro.observe(el));
+
+      /* MODALS */
+      let unlocked = false;
+      function openModal(id) {
+        document.getElementById(id).classList.add("open");
+        if (id === "modal-unlocked") confetti({ particleCount: 100 });
+      }
+      function closeModal(e, id) {
+        if (e.target.id === id)
+          document.getElementById(id).classList.remove("open");
+      }
+      function closeBtn(e) {
+        e.target.closest(".modal-overlay").classList.remove("open");
+      }
+      function checkGift() {
+        if (unlocked) openModal("modal-unlocked");
+        else openModal("modal-locked");
+      }
+
+      /* COUPONS (5 Items) */
+      const coupons = [
+        {
+          icon: "🍽️",
+          title: "Dinner Treat",
+          sub: "Any restaurant or food you want.I will try my best to get it for you",
+        },
+        {
+          icon: "🎥",
+          title: "Movie Night/Day",
+          sub: "You pick the film and kita tengok sama sama, horror movie pun bole, dekat wayang or anywhere else, I teman",
+        },
+        {
+          icon: "💆",
+          title: "Massage",
+          sub: "30 mins service urut free, ini boleh claim 3 kali",
+        },
+        {
+          icon: "🚙",
+          title: "Road Trip",
+          sub: "Anywhere that you want.I try my best to come up with a plan to go there",
+        },
+        {
+          icon: "✨",
+          title: "LEGENDARY COUPON",
+          sub: "Whatever you wish, Yang Bocil. Anything",
+          special: true,
+        },
+      ];
+      const cGrid = document.getElementById("coupons-list");
+      coupons.forEach((c, i) => {
+        const cID = `canvas-${i}`,
+          exClass = c.special ? "super-ticket" : "";
+        cGrid.innerHTML += `
+        <div class="coupon-ticket ${exClass}">
+            <div class="coupon-left">
+                <div class="coupon-icon">${c.icon}</div>
+                <h4 class="coupon-name">${c.title}</h4>
+                <p class="coupon-desc">${c.sub}</p>
+                <div class="scratch-area">
+                    <canvas id="${cID}" class="scratch-canvas"></canvas>
+                    <div class="scratch-reveal">🎟️ Claimed! 🎟️</div>
+                </div>
+            </div>
+            <div class="coupon-right"><span class="coupon-number">VCH-00${i + 1}</span></div>
+        </div>`;
+      });
+      setTimeout(() => {
+        coupons.forEach((_, i) => initScratch(`canvas-${i}`));
+      }, 800);
+      function initScratch(id) {
+        const canvas = document.getElementById(id),
+          ctx = canvas.getContext("2d"),
+          rect = canvas.parentElement.getBoundingClientRect();
+        canvas.width = rect.width;
+        canvas.height = rect.height;
+        ctx.fillStyle = "#c8b0b5";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        let isDraw = false;
+        canvas.onmousedown = canvas.ontouchstart = () => (isDraw = true);
+        window.onmouseup = window.ontouchend = () => (isDraw = false);
+        canvas.onmousemove = canvas.ontouchmove = (e) => {
+          if (!isDraw) return;
+          const r = canvas.getBoundingClientRect();
+          const x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left;
+          const y = (e.touches ? e.touches[0].clientY : e.clientY) - r.top;
+          ctx.globalCompositeOperation = "destination-out";
+          ctx.beginPath();
+          ctx.arc(x, y, 20, 0, Math.PI * 2);
+          ctx.fill();
+        };
+      }
+
+      /* QUIZ (Text Only) */
+      const qData = [
+        {
+          q: "What is my favouvrite color?",
+          correct: 3,
+          ops: [
+            { lbl: "black" },
+            { lbl: "purple" },
+            { lbl: "rainbow" },
+            { lbl: "pink" },
+          ],
+        },
+        {
+          q: "What is my favourite food?",
+          correct: 2,
+          ops: [
+            { lbl: "wagyu a5 Miyazaki" },
+            { lbl: "snek ikan" },
+            { lbl: "ramen" },
+            { lbl: "spagethi carbonara" },
+          ],
+        },
+        {
+          q: "What is my favourite game?",
+          correct: 2,
+          ops: [
+            { lbl: "stardew valley" },
+            { lbl: "Minecraft" },
+            { lbl: "ragebait nadiy" },
+            { lbl: "roblox" },
+          ],
+        },
+        {
+          q: "Vibe check : Us?",
+          correct: 1,
+          ops: [
+            { lbl: "Cozy" },
+            { lbl: "Adventurous" },
+            { lbl: "Classy" },
+            { lbl: "Alpha" },
+          ],
+        },
+        {
+          q: "What was i wearing on our first date?",
+          correct: 3,
+          ops: [
+            { lbl: "formal" },
+            { lbl: "collar shirt" },
+            { lbl: "nothing" },
+            { lbl: "casual shirt" },
+          ],
+        },
+        {
+          q: "What is my favourite bts song?",
+          correct: 2,
+          ops: [
+            { lbl: "mic drop" },
+            { lbl: "boy with luv" },
+            { lbl: "fake love" },
+            { lbl: "dna" },
+          ],
+        },
+        {
+          q: "Island survival winner?",
+          correct: 3,
+          ops: [
+            { lbl: "both perish" },
+            { lbl: "you" },
+            { lbl: "me" },
+            { lbl: "together(but sebab i)" },
+          ],
+        },
+        {
+          q: 'Let S be the set of all permutations of the sequence (1, 2, 3, ..., n). A permutation is considered "locally restricted" if, for every element i, the absolute difference between its value and its position is at most 1 (i.e., |sigma(i) - i| <= 1). Let f(n) be the total number of such permutations for a given n.',
+          correct: 1,
+          ops: [
+            { lbl: "A) 55" },
+            { lbl: "B) 89" },
+            { lbl: "C) 144" },
+            { lbl: "D) 233" },
+          ],
+        },
+        {
+          q: "An object of mass m is dropped from rest in a medium where the air resistance (drag force) is proportional to the square of the velocity, represented by the equation F = -kv^2, where k is a constant. Using g as the acceleration due to gravity, which expression correctly represents the time t required for the object to reach a specific velocity v?",
+          correct: 2,
+          ops: [
+            {
+              lbl: "A) t = sqrt(m / (kg)) * ln( (sqrt(mg/k) + v) / (sqrt(mg/k) - v) )",
+            },
+            {
+              lbl: "B) t = 0.5 * sqrt(m / (kg)) * ln( (sqrt(mg/k) + v) / (sqrt(mg/k) - v) )",
+            },
+            { lbl: "C) t = sqrt(m / (kg)) * arctan( v * sqrt(k / (mg)) )" },
+            { lbl: "D) t = (m / k) * (1 / v)" },
+          ],
+        },
+        {
+          q: "IMPORTANT QUESTION : Siapa lagi alpha?",
+          correct: 0,
+          ops: [
+            { lbl: "Faizal" },
+            { lbl: "nadiy bocah" },
+            { lbl: "nadiy fomo" },
+            { lbl: "nadiy kunti ramsamsam extra spicy" },
+          ],
+        },
+      ];
+
+      let currQ = 0,
+        score = 0,
+        answered = false;
+      function loadQuiz() {
+        answered = false;
+        document.getElementById("q-progress-fill").style.width =
+          (currQ / 10) * 100 + "%";
+        document.getElementById("q-counter").innerText =
+          `Memory ${currQ + 1} of 10`;
+        document.getElementById("q-text").innerText = qData[currQ].q;
+        const grid = document.getElementById("q-options");
+        grid.innerHTML = "";
+        qData[currQ].ops.forEach((op, idx) => {
+          const el = document.createElement("div");
+          el.className = "quiz-opt text-only";
+          el.innerHTML = `${op.lbl}`;
+          el.onclick = () => {
+            if (answered) return;
+            answered = true;
+            if (idx === qData[currQ].correct) {
+              el.classList.add("correct");
+              score++;
+              spawnHearts(el); // Triggers the floating hearts!
+            } else {
+              el.classList.add("wrong");
+              grid.children[qData[currQ].correct].classList.add("correct");
+            }
+            document.getElementById("quiz-next").classList.add("show");
+          };
+          grid.appendChild(el);
+        });
+      }
+
+      /* HEARTS ANIMATION ON CORRECT ANSWER */
+      function spawnHearts(anchor) {
+        const rect = anchor.getBoundingClientRect();
+        ["❤️", "💕", "💖"].forEach((emoji, i) => {
+          setTimeout(() => {
+            const h = document.createElement("div");
+            h.className = "heart-pop";
+            h.textContent = emoji;
+            h.style.left =
+              rect.left + rect.width / 2 + (Math.random() - 0.5) * 60 + "px";
+            h.style.top = rect.top + rect.height / 2 + "px";
+            document.body.appendChild(h);
+            h.addEventListener("animationend", () => h.remove());
+          }, i * 150);
+        });
+      }
+
+      function nextQuestion() {
+        currQ++;
+        if (currQ < 10) {
+          loadQuiz();
+          document.getElementById("quiz-next").classList.remove("show");
+        } else endQuiz();
+      }
+      function endQuiz() {
+        document.getElementById("quiz-panel").style.display = "none";
+        if (score === 10) {
+          unlocked = true;
+          document.getElementById("quiz-success").style.display = "block";
+          document
+            .getElementById("bento-gift")
+            .classList.remove("panel-locked");
+          document.getElementById("bento-gift").classList.add("unlocked");
+        } else {
+          document.getElementById("final-score").innerText = score;
+          document.getElementById("quiz-fail").style.display = "block";
+        }
+      }
+      function restartQuiz() {
+        currQ = 0;
+        score = 0;
+        document.getElementById("quiz-fail").style.display = "none";
+        document.getElementById("quiz-panel").style.display = "block";
+        loadQuiz();
+      }
+      loadQuiz();
+
+      /* MUSIC */
+      const mBtn = document.getElementById("music-btn"),
+        bgm = document.getElementById("bgm");
+      let playing = false;
+      mBtn.onclick = () => {
+        if (!playing) {
+          bgm.play();
+          mBtn.classList.add("playing");
+        } else {
+          bgm.pause();
+          mBtn.classList.remove("playing");
+        }
+        playing = !playing;
+      };
+    </script>
+  </body>
+</html>
